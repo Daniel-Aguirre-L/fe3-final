@@ -1,122 +1,446 @@
+/* Estilos generales */
 body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Modo claro */
+body {
+  background-color: #f5f5f5;
+  color: #333;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
+
+h1, h2, h3 {
+  color: #33385D;
+}
+
+p {
+  color: #555;
+}
+
+nav {
+  background-color: #484e7a;
+  color: #fff;
+}
+
+.card {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Modo oscuro */
+.dark {
+  background-color: #353333;
+}
+
+.dark .name {
+  color: #E0E0E0; 
+}
+
+.dark h1, .dark h3 {
+  color: #e0e0e0;
+}
+
+.dark p {
+  color: #b0b0b0;
+}
+
+.dark nav {
+  background-color: #1F253B;
+  color: #e0e0e0;
+}
+
+.dark .card {
+  background-color: #1E2A38;
+  color: #e0e0e0;
+}
+
+.dark .btn-send {
+  background-color: #0099cc;
+  color: #fff;
+}
+
+.dark .btn-send:hover {
+  background-color: #0077b3;
+}
+
+.dark footer {
+  background-color: #1F253B;
+}
+
+/* Estilos para transiciones */
+.btn-send {
+  background-color: #0099cc;
+}
+
+.dark .btn-send {
+  background-color: #006699;
+}
+
+.dark .btn-send:hover {
+  background-color: #004d66;
+}
+/* Títulos principales */
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #33385D;
+  margin: 0;
   padding: 10px;
-  border: none;
-  width: 100%;
-  cursor: pointer;
+  text-align: center;
+  margin-top: 3.2rem;
+  letter-spacing: 0.02rem;
 }
 
-h1{
+/* Títulos secundarios */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 3.2rem;
+  padding: 10px;
   text-align: center;
 }
 
-nav{
-  display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
+/* Párrafos */
+p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 20px;
 }
 
-a{
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
-  cursor: pointer;
-}
-a:hover{
-  color: rgb(136, 136, 136);
-} 
-
-footer {
+/* Barra de navegación */
+nav {
+  background-color: #7678ce;
+  padding: 20px;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  width: 40px;
   height: 40px;
-  margin-top: 2rem;
+  margin-right: 10px;
 }
 
-footer > img{
-  width: 200px;
-  margin: 0;
-}
-footer > p{
-  margin: 0;
-  padding-top: 0.7rem;
+.logo-text {
+  font-size: 1.5rem;
+  color: #f5f5f5;
 }
 
-form{
+.nav-container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
+  align-items: center;
+  column-gap: 20px;
 }
 
-.card{
+.nav-bar {
   display: flex;
-  justify-content: space-around;
+  gap: 12px;
+}
+
+.nav-bar a {
+  color: #f5f5f5;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-bar a:hover {
+  color: rgba(1, 209, 200, 1);
+}
+
+.btn-change-theme {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #fff;
+}
+
+/* Home y Favs */
+.subtitle {
+  text-align: center;
+  font-weight: 400;
+  margin-top: 0rem;
+  margin-bottom: 3.2rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+  grid-gap: 20px;
+  margin: 3rem;
+  justify-content: center;
+}
+
+/* Tarjetas */
+.card {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  max-width: 200px;
 }
 
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+.card-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.card-grid{
+.user {
+  margin-bottom: 0rem;
+}
+
+.name {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  color: #33385D;
+}
+
+.user:hover, .name:hover {
+  text-shadow: 0 0 5px rgba(1, 7, 7, 0.1);
+}
+
+.info {
+  margin-bottom: 1.6rem;
+  font-size: 14px;
+}
+
+.info:hover {
+  text-decoration: underline;
+}
+
+/* Imágenes de tarjetas */
+.card img {
+  width: 100%; 
+  object-fit: cover; 
+  border-radius: 10px; 
+}
+
+/* Estilos para el botón de agregar a favoritos */
+.btn-fav {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 3rem;
+  margin: auto;
+  position: relative; /* Necesario para el tooltip */
+}
+
+.heart {
+  width: 100%; 
+  object-fit: cover; 
+  margin: 2px;
+}
+
+/* Estilos para el tooltip */
+.btn-fav:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-fav:hover::after {
+  opacity: 1;
+}
+
+/* Detalles */
+.btn-back {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  max-width: 42px;
+  margin: 20px;
+}
+
+.arrow {
+  width: 100%; 
+  object-fit: cover; 
+  margin: 2px;
+}
+
+.contact-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+}
+
+.contact-card p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.contact-card p:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+}
+
+.contact-card p:not(:first-child) {
+  font-size: 14px;
+  color: #666666;
+}
+
+.contact-card p:not(:first-child):before {
+  content: '\2022';
+  display: inline-block;
+  margin-right: 5px;
+  color: #999999;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Contacto */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px;
+}
+
+/* Campos de formulario */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form label {
+  align-self: flex-start;
+  margin-left: -10px;
+  margin-bottom: 4px;
+}
+
+/* Botón de envío del formulario */
+form .btn-send {
+  background-color: #0099cc;
+  color: #fff;
+}
+
+.btn-send {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 12px;
+}
+
+.btn-send:hover {
+  background-color: #0077b3;
+}
+
+/* Mensaje de éxito */
+.msg-success {
+  color: #0099cc;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Mensaje de error */
+.msg-error {
+  color: #ff0000;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #7678ce;
+  padding: 20px;
   display: flex;
   justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
+  align-items: center;
+  color: #fff;
+  margin-top: 6rem;
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 250px;
   height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
 }
 
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+.redes-container {
+  display: flex;
+  align-items: center;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+.redes-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+/* Pantalla grande */
+@media screen and (min-width: 769px) {
+  .logo2 {
+    display: none;
+  }
 }
 
-.dark{
-  background-color: #12121296;
-  color: white;
-}
-.dark > a {
-  color: white;
+/* Dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 1rem;
+  }
+  
+  .contact-card {
+    width: 90%;
+    margin: 10px;
+  }
+
+  .footer-logo {
+    width: 100px;
+  }
 }
