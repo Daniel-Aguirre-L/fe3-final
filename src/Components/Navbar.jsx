@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className={themeState.theme === 'dark' ? 'navbar-dark' : 'navbar-light'}>
       <div className='logo-container'>
-        <img className='logo-icon' src="public/DH.ico" alt="DH Odonto icon" />
+        <img className='logo-icon' src="images/DH.ico" alt="DH Odonto icon" />
         <span className='logo-text'>DH ODONTO</span>
       </div>
 
