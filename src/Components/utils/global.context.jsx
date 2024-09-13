@@ -21,7 +21,7 @@ export const ContextProvider = ({ children }) => {
         const response = await axios('https://jsonplaceholder.typicode.com/users');
         dentistDispatch({ type: 'GET_LIST', payload: response.data });
       } catch (error) {
-        console.error('Error fetching dentists:', error); 
+        console.error('Error fetching dentists:', error);
       }
     };
     fetchDentists();
@@ -31,6 +31,11 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('favs', JSON.stringify(favState));
   }, [favState]);
+
+  // Save theme to localStorage 
+  useEffect(() => {
+    localStorage.setItem('theme', themeState.theme);
+  }, [themeState.theme]);
 
   return (
     <ContextGlobal.Provider value={{

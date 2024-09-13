@@ -26,7 +26,7 @@ export const fetchReducer = (state, action) => {
     switch (action.type) {
       case 'CHANGE_THEME':
         const newTheme = state.theme === 'light' ? 'dark' : 'light';
-        return { theme: newTheme }; 
+        return { theme: newTheme };
       default:
         return state;
     }
