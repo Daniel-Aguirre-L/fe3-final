@@ -46,6 +46,10 @@ nav {
   color: #b0b0b0;
 }
 
+.dark .msg-error {
+  color: red;
+}
+
 .dark nav {
   background-color: #1F253B;
   color: #e0e0e0;
